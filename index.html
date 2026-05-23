@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">   
-    <script type="module" src="/sctipt/index.js" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -16,14 +16,14 @@
             <img src="/img/logo/Group 19 2.png" alt="Логотип" class="logo">
             <nav class="header__nav">
                 <div class="header__nav-link">
-                    <a href="#" class="header__nav-link-item">Главная</a>
-                    <a href="#" class="header__nav-link-item">Про гида</a>
-                    <a href="#" class="header__nav-link-item">Программа тура</a>
-                    <a href="#" class="header__nav-link-item">Стоимость</a>
-                    <a href="#" class="header__nav-link-item">Блог</a>
-                    <a href="#" class="header__nav-link-item">Контакты</a>
+                    <a href="#" class="header__nav-link-item" data-key="navMain"></a>
+                    <a href="#" class="header__nav-link-item" data-key="navGuide"></a>
+                    <a href="#" class="header__nav-link-item" data-key="navProgram"></a>
+                    <a href="#" class="header__nav-link-item" data-key="navPrice"></a>
+                    <a href="#" class="header__nav-link-item" data-key="navBlog"></a>
+                    <a href="#" class="header__nav-link-item" data-key="navContact"></a>
                 </div>
-                <button class="header__nav-btn btn">Консультация</button>
+                <button class="header__nav-btn btn" data-key="navBtn"></button>
             </nav> 
             <div class="burger__menu">
                 <div class="burger">

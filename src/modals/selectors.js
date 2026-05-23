@@ -13,5 +13,8 @@ export const selectors = {
     optionsLocate: document.getElementById('form-locate'),
     optionsTime: document.getElementById('form-date'),
     optionsCount: document.getElementById('form-members'),
-    optionsBtn: document.querySelector('.header__form-button')
+    optionsBtn: document.querySelector('.header__form-button'),
+
+    // dataKey:
+    dataKey: document.querySelectorAll('[data-key]')
 }
