@@ -1,0 +1,53 @@
+body{
+    background-color: #7d7d7d;
+    padding: 0px;
+    margin: 0;
+    margin: 0 auto;
+}
+
+
+.burger {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.line {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #333;
+  margin: 5px 0;
+  border-radius: 2px; /* скругление для всех */
+  transition: all 0.3s ease;
+}
+
+/* Последняя полоска на 50% короче */
+.line:nth-child(3) {
+  width: 15px; /* 50% от 30px */
+  margin-left: auto; /* прижать к правому краю (опционально) */
+}
+
+/* Анимация в крестик */
+.burger.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.active .line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger.active .line:nth-child(3) {
+  width: 30px; /* при активации становится полной длины */
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+    margin: 20px;
+}
