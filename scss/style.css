@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Reset and base styles  */
 * {
   padding: 0px;
@@ -99,7 +98,7 @@ input[type=file] {
 }
 body {
   background-color: #FFFFFF;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 a {
@@ -120,6 +119,22 @@ button {
 button:hover {
   background-color: #FDFDFD;
   color: #1A3E3E;
+}
+
+.loading {
+  background: url(../img/header/header-bg.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 10;
+  inset: 0;
+  position: fixed;
+  transition: 0.3s ease-in-out;
+  overflow-y: hidden;
+}
+.loading__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hid {
@@ -305,12 +320,7 @@ button:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-.about__text-title::before {
-  content: "о нашем походе";
-  font-size: 24px;
-  color: #F2BE22;
-  font-weight: 400;
+  max-width: 500px;
 }
 .about__text-desc {
   color: #18121E;
@@ -344,13 +354,6 @@ button:hover {
   font-weight: 800;
   display: flex;
   flex-direction: column;
-}
-.offer__text-title::before {
-  color: #18121E;
-  content: "наше предложение";
-  font-size: 24px;
-  color: #F2BE22;
-  font-weight: 400;
 }
 .offer__text-desc {
   width: 580px;
@@ -424,13 +427,6 @@ button:hover {
   color: #18121E;
   display: flex;
   flex-direction: column;
-}
-.popular__title::before {
-  color: #18121E;
-  content: "по версии отдыхающих";
-  font-size: 24px;
-  color: #F2BE22;
-  font-weight: 400;
 }
 .popular__btn {
   width: 244px;
@@ -537,27 +533,6 @@ button:hover {
   font-size: 14px;
   font-weight: 700;
 }
-.popular__item:nth-child(1) .popular__item-text-title::after {
-  content: "романтическое приключение";
-  color: #FDFDFD;
-  font-size: 14px;
-  font-weight: 400;
-  display: block;
-}
-.popular__item:nth-child(2) .popular__item-text-title::after {
-  content: "в компании друзей";
-  color: #FDFDFD;
-  font-size: 14px;
-  font-weight: 400;
-  display: block;
-}
-.popular__item:nth-child(3) .popular__item-text-title::after {
-  content: "для тех, кто забоится о себе";
-  color: #FDFDFD;
-  font-size: 14px;
-  font-weight: 400;
-  display: block;
-}
 
 .blog {
   background-color: #F3F5F4;
@@ -576,13 +551,6 @@ button:hover {
   color: #18121E;
   display: flex;
   flex-direction: column;
-}
-.blog__title::before {
-  color: #18121E;
-  content: "делимся впечатлениями";
-  font-size: 24px;
-  color: #F2BE22;
-  font-weight: 400;
 }
 .blog__card {
   display: grid;
@@ -668,13 +636,6 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
-.photo__title::before {
-  color: #18121E;
-  content: "фото-отчет";
-  font-size: 24px;
-  color: #F2BE22;
-  font-weight: 400;
-}
 .photo__block {
   display: flex;
   flex-direction: column;
@@ -721,13 +682,6 @@ button:hover {
   line-height: 120%;
   font-weight: 800;
   color: #18121E;
-}
-.feedback__title::before {
-  color: #18121E;
-  content: "актуально";
-  font-size: 18px;
-  color: #F2BE22;
-  font-weight: 400;
 }
 .feedback__form {
   display: flex;

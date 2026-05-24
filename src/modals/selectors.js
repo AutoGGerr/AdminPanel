@@ -1,6 +1,9 @@
 export const selectors = {
     body: document.querySelector('body'),
+    main: document.querySelector('.main'),
+    loading: document.querySelector('.loading'),
 
+        
     player: document.querySelector('.about__player-img'),
     modalPlayer: document.querySelector('.modal'),
     modalBack: document.querySelector('.modal__back'),
