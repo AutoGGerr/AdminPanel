@@ -214,9 +214,13 @@ button{
                 }
             }
         }
-
+        &-btns{
+            display: flex;
+            gap: 4px;
+        }
         &-btn{
-            @include btn(157px, 44px);
+            font-size: 10px;
+            @include btn(137px, 30px);
         }
     }
 

@@ -20,21 +20,20 @@ const loadData = async () => {
     const contentData = []
 
     querySnapshot.forEach((doc) => {
+        const data = doc.data()
+        selectors.dataKey.forEach((item) => {
 
-    const data = doc.data()
-    selectors.dataKey.forEach((item) => {
+            const key = item.dataset.key
 
-        const key = item.dataset.key
-
-        if (data[key]) {
-            item.innerHTML = data[key]
-        }
-        selectors.loading.style.opacity = '0'
-        setTimeout(()=>{
-            selectors.loading.style.display = 'none'
-            selectors.body.style.overflow = 'visible'
-        }, 600)
-    })
+            if (data[key]) {
+                item.innerHTML = data[key]
+            }
+            selectors.loading.style.opacity = '0'
+            setTimeout(()=>{
+                selectors.loading.style.display = 'none'
+                selectors.body.style.overflow = 'visible'
+            }, 600)
+        })
 
     })
 }

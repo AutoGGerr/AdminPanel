@@ -183,9 +183,14 @@ button:hover {
 .header__nav-link-item:hover {
   opacity: 0.8;
 }
+.header__nav-btns {
+  display: flex;
+  gap: 4px;
+}
 .header__nav-btn {
-  width: 157px;
-  height: 44px;
+  font-size: 10px;
+  width: 137px;
+  height: 30px;
 }
 .header__content-form {
   margin-top: 485px;

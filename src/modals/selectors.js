@@ -2,7 +2,6 @@ export const selectors = {
     body: document.querySelector('body'),
     main: document.querySelector('.main'),
     loading: document.querySelector('.loading'),
-
         
     player: document.querySelector('.about__player-img'),
     modalPlayer: document.querySelector('.modal'),
@@ -18,6 +17,7 @@ export const selectors = {
     optionsCount: document.getElementById('form-members'),
     optionsBtn: document.querySelector('.header__form-button'),
 
+    adminText: document.querySelector('.admin__text'),
     // dataKey:
     dataKey: document.querySelectorAll('[data-key]')
 }
