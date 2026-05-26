@@ -117,7 +117,6 @@ $btn-color: #1A3E3E;
 
 body{
     background-color: $body-color;
-    overflow: hidden;
 }
 
 a{
@@ -165,7 +164,7 @@ button{
 // signIn
 
 .admin{
-    background: url(/img/adminPanel/1.jpg) no-repeat center;
+    background: url(/img/adminPanel/1.jpg) center;
     background-size: cover;
     min-height: 100vh;
 
@@ -174,15 +173,19 @@ button{
         flex-direction: column;
     }
     &__title{
-        margin-top: 20px;
-        font-size: 30px;
-        font-weight: 700;
-        opacity: 0.7;
+        display: flex;
+        justify-content: space-between;
+        &-item{
+            margin-top: 20px;
+            font-size: 30px;
+            font-weight: 700;
+            opacity: 0.7;
 
-        color: $main-color;
+            color: $main-color;
+        }
+
     }
     &__block{
-        width: auto;
         border: 1px $main-color solid;
         border-radius: 10px;
         opacity: 0.5;
@@ -192,29 +195,55 @@ button{
 
         margin-top: 50px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        
+        gap: 60px;
         &-btn{
             @include btn(130px, 40px);
         }
 
         &-text{
-            &::after{
-                content: "";
+            field-sizing: content;
+            border: 1px black solid;
+            border-radius: 6px;
+            font-size: 15px;
 
-                display: block;
-                width: 100%;
-                height: 1px;
-                
-                margin-top: 20px;
-                background-color: $main-color-dark;
-            }
+            padding: 7px;
         }
+
+        &-title{
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
     }
     &__text{
         display: flex;
         flex-direction: column;
-        gap: 20px;
 
-        
+        position: relative;
+        gap: 10px;
+        &::after{
+            content: "";
+
+            display: block;
+            width: 101%;
+            height: 2px;
+
+            background-color: $btn-color;
+            position: absolute;
+
+            bottom: -35px;
+            border-radius: 100px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &-input{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
     }
 }

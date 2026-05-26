@@ -17,7 +17,9 @@ export const selectors = {
     optionsCount: document.getElementById('form-members'),
     optionsBtn: document.querySelector('.header__form-button'),
 
+    adminBlock: document.querySelector('.admin__block'),
     adminText: document.querySelector('.admin__text'),
+    adminInput: document.querySelector('.admin__text-input'),
     // dataKey:
     dataKey: document.querySelectorAll('[data-key]')
 }

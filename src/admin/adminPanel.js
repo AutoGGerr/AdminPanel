@@ -5,31 +5,248 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { log } from 'firebase/firestore/lite/pipelines';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAfiiw0580mq5pEWzC4Zl8pRsrlil4kLkg",
-  authDomain: "admin-panel-8c255.firebaseapp.com",
-  projectId: "admin-panel-8c255",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
 };
-const adminText = selectors.adminText
+
+
+const adminBlock = selectors.adminBlock
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
-const loadData = async() =>{
+// Header
+const headerData = async() =>{
     const docRef = doc(db, 'content', 'header');
     const docSnap = await getDoc(docRef);
-    let headerContent = []
+    let сontent = []
 
     const data = docSnap.data()
-    headerContent = Object.values(data)
+    сontent = Object.values(data)
+    
+    const docId = docRef.id
+    const docName = document.createElement('h1')
+    docName.textContent = docId
+    docName.className = 'admin__block-title'
 
-    headerContent.forEach((item)=> {
-        const div = document.createElement('div')
+    const adminText = document.createElement('div')
+    adminText.append(docName)
+    adminText.className = 'admin__text'
+    
+    const adminInput = document.createElement('div')
+    adminInput.className = 'admin__text-input'
+    adminText.append(adminInput)
+    adminBlock.prepend(adminText)
 
-
-        div.innerHTML += item
-        div.className = 'admin__block-text'
-        adminText.append(div);
+    
+    сontent.forEach((item)=> {
+        const docInput = document.createElement('input')
+        docInput.value += item
+        docInput.className = 'admin__block-text'
+        adminInput.append(docInput);
+        
     })
 }
-loadData()
 
+// About
+const aboutData = async() =>{
+    const docRef = doc(db, 'content', 'aboutSection');
+    const docSnap = await getDoc(docRef);
+    let сontent = []
+
+    const data = docSnap.data()
+    сontent = Object.values(data)
+    
+    const docId = docRef.id
+    const docName = document.createElement('h1')
+    docName.textContent = docId
+    docName.className = 'admin__block-title'
+
+    const adminText = document.createElement('div')
+    adminText.append(docName)
+    adminText.className = 'admin__text'
+    
+    const adminInput = document.createElement('div')
+    adminInput.className = 'admin__text-input'
+    adminText.append(adminInput)
+    adminBlock.prepend(adminText)
+
+    
+    сontent.forEach((item)=> {
+        const docInput = document.createElement('input')
+        docInput.value += item
+        docInput.className = 'admin__block-text'
+        adminInput.append(docInput);
+    })
+}
+
+
+// offer
+const offerData = async() =>{
+    const docRef = doc(db, 'content', 'offer');
+    const docSnap = await getDoc(docRef);
+    let сontent = []
+
+    const data = docSnap.data()
+    сontent = Object.values(data)
+    
+    const docId = docRef.id
+    const docName = document.createElement('h1')
+    docName.textContent = docId
+    docName.className = 'admin__block-title'
+
+    const adminText = document.createElement('div')
+    adminText.append(docName)
+    adminText.className = 'admin__text'
+    
+    const adminInput = document.createElement('div')
+    adminInput.className = 'admin__text-input'
+    adminText.append(adminInput)
+    adminBlock.prepend(adminText)
+
+    
+    сontent.forEach((item)=> {
+        const docInput = document.createElement('input')
+        docInput.value += item
+        docInput.className = 'admin__block-text'
+        adminInput.append(docInput);
+    })
+}
+
+// popular
+const popularData = async() =>{
+    const docRef = doc(db, 'content', 'popular');
+    const docSnap = await getDoc(docRef);
+    let сontent = []
+
+    const data = docSnap.data()
+    сontent = Object.values(data)
+    
+    const docId = docRef.id
+    const docName = document.createElement('h1')
+    docName.textContent = docId
+    docName.className = 'admin__block-title'
+
+    const adminText = document.createElement('div')
+    adminText.append(docName)
+    adminText.className = 'admin__text'
+    
+    const adminInput = document.createElement('div')
+    adminInput.className = 'admin__text-input'
+    adminText.append(adminInput)
+    adminBlock.prepend(adminText)
+
+    
+    сontent.forEach((item)=> {
+        const docInput = document.createElement('input')
+        docInput.value += item
+        docInput.className = 'admin__block-text'
+        adminInput.append(docInput);
+    })
+}
+
+// blog 
+const blogData = async() =>{
+    const docRef = doc(db, 'content', 'blog');
+    const docSnap = await getDoc(docRef);
+    let сontent = []
+
+    const data = docSnap.data()
+    сontent = Object.values(data)
+    
+    const docId = docRef.id
+    const docName = document.createElement('h1')
+    docName.textContent = docId
+    docName.className = 'admin__block-title'
+
+    const adminText = document.createElement('div')
+    adminText.append(docName)
+    adminText.className = 'admin__text'
+    
+    const adminInput = document.createElement('div')
+    adminInput.className = 'admin__text-input'
+    adminText.append(adminInput)
+    adminBlock.prepend(adminText)
+
+    
+    сontent.forEach((item)=> {
+        const docInput = document.createElement('input')
+        docInput.value += item
+        docInput.className = 'admin__block-text'
+        adminInput.append(docInput);
+    })
+}
+
+// photo
+const photoData = async() =>{
+    const docRef = doc(db, 'content', 'photo');
+    const docSnap = await getDoc(docRef);
+    let сontent = []
+
+    const data = docSnap.data()
+    сontent = Object.values(data)
+    
+    const docId = docRef.id
+    const docName = document.createElement('h1')
+    docName.textContent = docId
+    docName.className = 'admin__block-title'
+
+    const adminText = document.createElement('div')
+    adminText.append(docName)
+    adminText.className = 'admin__text'
+    
+    const adminInput = document.createElement('div')
+    adminInput.className = 'admin__text-input'
+    adminText.append(adminInput)
+    adminBlock.prepend(adminText)
+
+    
+    сontent.forEach((item)=> {
+        const docInput = document.createElement('input')
+        docInput.value += item
+        docInput.className = 'admin__block-text'
+        adminInput.append(docInput);
+    })
+}
+
+
+// feedback
+const feedbackData = async() =>{
+    const docRef = doc(db, 'content', 'feedBack');
+    const docSnap = await getDoc(docRef);
+    let сontent = []
+
+    const data = docSnap.data()
+    сontent = Object.values(data)
+    
+    const docId = docRef.id
+    const docName = document.createElement('h1')
+    docName.textContent = docId
+    docName.className = 'admin__block-title'
+
+    const adminText = document.createElement('div')
+    adminText.append(docName)
+    adminText.className = 'admin__text'
+    
+    const adminInput = document.createElement('div')
+    adminInput.className = 'admin__text-input'
+    adminText.append(adminInput)
+    adminBlock.prepend(adminText)
+
+    
+    сontent.forEach((item)=> {
+        const docInput = document.createElement('input')
+        docInput.value += item
+        docInput.className = 'admin__block-text'
+        adminInput.append(docInput);
+    })
+}
+
+feedbackData()
+photoData()
+blogData()
+popularData()
+offerData()
+aboutData()
+headerData()
