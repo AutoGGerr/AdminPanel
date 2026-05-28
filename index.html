@@ -2,30 +2,387 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <link rel="stylesheet" href="./scss/admin/admin.css">
-    <script type="module" src="/src/admin/adminPanel.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>РумТибет</title>
+    <link rel="stylesheet" href="/scss/main/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">   
+    <script type="module" src="/src/main.js" defer></script>
 </head>
+
 <body>
-    <section class="admin">
-        <div class="admin__content content">
-            <div class="admin__title">
-                <img src="./img/logo/Group 19 2.png" alt="" class="logo">       
-                <h2 class="admin__title-item">Admin Panel</h2>               
+    <div class="loading"></div>
+    <div class="main">
+        <header class="header">
+            <div class="header__content-nav content">
+                <img src="/img/logo/Group 19 2.png" alt="Логотип" class="logo">
+                <nav class="header__nav">
+                    <div class="header__nav-link">
+                        <a href="#" class="header__nav-link-item" data-key="navMain"></a>
+                        <a href="#" class="header__nav-link-item" data-key="navGuide"></a>
+                        <a href="#" class="header__nav-link-item" data-key="navProgram"></a>
+                        <a href="#" class="header__nav-link-item" data-key="navPrice"></a>
+                        <a href="#" class="header__nav-link-item" data-key="navBlog"></a>
+                        <a href="#" class="header__nav-link-item" data-key="navContact"></a>
+                    </div>
+                    <div class="header__nav-btns">
+                        <a href="/adminPanel.html">
+                            <button class="header__nav-btn btn" data-key="navSignIn"></button>          
+                        </a>
+                                      
+                    </div>
+
+                </nav> 
+                <div class="burger__menu">
+                    <div class="burger">
+                        <div class="burger__content">
+                            <span class="burger__content-item"></span>
+                            <span class="burger__content-item"></span>
+                            <span class="burger__content-item"></span>                        
+                        </div>
+                    </div>
+                    <div class="burger__nav">
+                        <a href="#" class="burger__nav-item">Главная</a>
+                        <a href="#" class="burger__nav-item">Про гида</a>
+                        <a href="#" class="burger__nav-item">Программа тура</a>
+                        <a href="#" class="burger__nav-item">Стоимость</a>
+                        <a href="#" class="burger__nav-item">Блог</a>
+                        <a href="#" class="burger__nav-item">Контакты</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header__content-form content">
+                <h1 class="header__content-form-title" data-key="headerTitle"></h1>
+                <div class="header__form">
+                    <div class="header__form-select">
+                        <select name="form__locate" id="form-locate" class="header__form-select-item">
+                            <option value="" disabled selected data-key="formLocate"></option>
+                            <option value="United Kingdom" class="option-locate">Великобритания</option>
+                            <option value="Russia" class="option-locate">Россия</option>
+                            <option value="USA" class="option-locate">США</option>
+                        </select>
+                    </div>
+                    <div class="header__form-select">
+                        <select name="form__locate" id="form-date" class="header__form-select-item">
+                            <option value="" disabled selected data-key="formDate"></option>
+                            <option value="2 day" class="option-date">2 дня</option>
+                            <option value="3 day" class="option-date">3 дня</option>
+                            <option value="4 day" class="option-date">4 дня</option>
+                            <option value="6 day" class="option-date">6 дней</option>
+                            <option value="8 day" class="option-date">8 дней</option>
+                            <option value="10 day" class="option-date">10 дней</option>
+                            <option value="14 day" class="option-date">14 дней</option>
+                        </select>
+                    </div>
+                    <div class="header__form-select">
+                        <select name="form__locate" id="form-members" class="header__form-select-item">
+                            <option value="" disabled selected data-key="formMembers"></option>
+                            <option value="4 members" class="option-members">4</option>
+                            <option value="5 members" class="option-members">5</option>
+                            <option value="6 members" class="option-members">6</option>
+                        </select>
+                    </div>
+                    <div class="header__form-select">
+                        <div class="header__form-button">
+                            <h2 class="header__form-button-title" data-key="searchProgram"></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__form-button adaptive__form-button">
+                    <h2 class="header__form-button-title" data-key="searchProgram"></h2>
+                </div>
             </div>
 
 
-            <p class="admin__desc"></p>
-            <div class="admin__block">
-           <!-- <div class="admin__text">
-                    <div class="admin__text-input">
+        </header>
 
+        <section class="about">
+            <div class="about__content content">
+
+                <div class="about__player-content">
+                    <div class="about__player">
+                        <img src="/img/svg/player.png" alt="Плеер" class="about__player-img">
                     </div>
-                </div> --> 
-                <button class="btn admin__block-btn">Сохранить</button>
+                </div>
+                
+
+                <div class="about__text">
+                    <h6 class="about__text-title" data-key="aboutTitle"></h6>
+                    <p class="about__text-desc" data-key="aboutDesc"></p>
+                    <button class="about__text-btn btn" data-key="aboutBtn"></button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="offer">
+            <div class="offer__content content">
+                <div class="offer__text">
+                    <h6 class="offer__text-title" data-key="offerTitle"></h6>
+                    <p class="offer__text-desc" data-key="offerDesc"></p>
+                    
+                    <div class="offer__text-block">
+                        <img src="/img/offer/tb-1.svg" alt="" class="offer__text-block--img">
+                        <div>
+                            <h4 class="offer__text-block--title" data-key="offerGuideTitle"></h4>
+                            <p class="offer__text-block--desc" data-key="offerGuideDesc"></p>
+                        </div>
+                    </div>
+
+                    <div class="offer__text-block">
+                        <img src="/img/offer/tb-2.svg" alt="" class="offer__text-block--img">
+                        <div>
+                            <h4 class="offer__text-block--title" data-key="offerSafeTitle"></h4>
+                            <p class="offer__text-block--desc" data-key="offerSafeDesc"></p>
+                        </div>
+                    </div>
+
+                    <div class="offer__text-block">
+                        <img src="/img/offer/tb-3.svg" alt="" class="offer__text-block--img">
+                        <div>
+                            <h4 class="offer__text-block--title" data-key="offerPriceTitle"></h4>
+                            <p class="offer__text-block--desc" data-key="offerPriceDesc"></p>
+                        </div>
+                    </div>
+
+                    <button class="offer__text-btn btn" data-key="offerBtn"></button>
+                </div>
+
+
+                <div class="offer__image">
+                    <img src="/img/offer/1-offer.jpg" alt="" class="offer__image-item">
+                    <img src="/img/offer/2-offer.jpg" alt="" class="offer__image-item">
+                    <img src="/img/offer/3-offer.jpg" alt="" class="offer__image-item">
+                    <img src="/img/offer/4-offer.jpg" alt="" class="offer__image-item">
+                </div>
+            </div>
+        </section>
+
+        <section class="popular">
+            <div class="popular__content content">
+                <h3 class="popular__title" data-key="popularTitle"></h3>
+
+                <div class="popular__card">
+                    <div class="popular__item">
+                        <div class="popular__item-rating">
+                            <img src="/img/svg/star.svg" alt="">
+                            <h6 data-key="popularFirstRating"></h6>
+                        </div>    
+                        <div class="popular__item-view">
+                            <div class="popular__item-text">
+                                <div>
+                                    <h6 class="popular__item-text-title" data-key="popularFirstTitle"></h6>
+                                    <div class="popular__item-text-price">
+                                        <p data-key="popularFirstPrice"></p>
+                                    </div>
+                                </div>
+                                <p class="popular__item-text-desc" data-key="popularFirstDesc"></p>
+                                <button class="popular__item-text-btn btn" data-key="popularFirstBtn"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popular__item">
+                        <div class="popular__item-rating">
+                            <img src="/img/svg/star.svg" alt="">
+                            <h6 data-key="popularSecondRating"></h6>
+                        </div>    
+                        <div class="popular__item-view">
+                            <div class="popular__item-text">
+                                <div>
+                                    <h6 class="popular__item-text-title" data-key="popularSecondTitle"></h6>
+                                    <div class="popular__item-text-price">
+                                        <p data-key="popularSecondPrice"></p>
+                                    </div>
+                                </div>
+                                <p class="popular__item-text-desc" data-key="popularSecondDesc"></p>
+                                <button class="popular__item-text-btn btn" data-key="popularSecondBtn"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popular__item">
+                        <div class="popular__item-rating">
+                            <img src="/img/svg/star.svg" alt="">
+                            <h6 data-key="popularThirdRating"></h6>
+                        </div>    
+                        <div class="popular__item-view">
+                            <div class="popular__item-text">
+                                <div>
+                                    <h6 class="popular__item-text-title" data-key="popularThirdTitle"></h6>
+                                    <div class="popular__item-text-price">
+                                        <p data-key="popularThirdPrice"></p>
+                                    </div>
+                                </div>
+                                <p class="popular__item-text-desc" data-key="popularThirdDesc"></p>
+                                <button class="popular__item-text-btn btn" data-key="popularThirdBtn"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="popular__btn btn" data-key="popularBtn"></button>
+            </div>
+        </section>
+        <section class="blog">
+            <div class="blog__content content">
+                <h3 class="blog__title" data-key="blogTitle"></h3>
+
+                <div class="blog__card">
+                    <div class="blog__card-item">
+                        <img src="/img/blog/card-1.jpg" alt="" class="blog__card-img">
+                        <div>
+                            <h4 class="blog__card-title" data-key="blogFirstTitle"></h4>
+                            <p class="blog__card-desc" data-key="blogFirstDesc"></p>
+                            <a href="#" class="blog__card-link">
+                                <span data-key="blogFirstDate"></span>
+                                <span data-key="blogFirstLink"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="blog__card-item">
+                        <img src="/img/blog/card-2.jpg" alt="" class="blog__card-img">
+                        <div>
+                            <h4 class="blog__card-title" data-key="blogSecondTitle"></h4>
+                            <p class="blog__card-desc" data-key="blogSecondDesc"></p>
+                            <a href="#" class="blog__card-link">
+                                <span data-key="blogSecondDate"></span>
+                                <span data-key="blogSecondLink"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="blog__card-item">
+                        <img src="/img/blog/card-3.jpg" alt="" class="blog__card-img">
+                        <div>
+                            <h4 class="blog__card-title" data-key="blogThirdTitle"></h4>
+                            <p class="blog__card-desc" data-key="blogThirdDesc"></p>
+                            <a href="#" class="blog__card-link">
+                                <span data-key="blogThirdDate"></span>
+                                <span data-key="blogThirdLink"></span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog__card-item">
+                        <img src="/img/blog/card-4.jpg" alt="" class="blog__card-img">
+                        <div>
+                            <h4 class="blog__card-title" data-key="blogFourthTitle"> </h4>
+                            <p class="blog__card-desc" data-key="blogFourthDesc"></p>
+                            <a href="#" class="blog__card-link">
+                                <span data-key="blogFourthDate"></span>
+                                <span data-key="blogFourthLink"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="blog__btn btn" data-key="blogBtn"></button>
+            </div>
+        </section>
+        <section class="photo">
+            <div class="photo__content content">
+                <h3 class="photo__title" data-key="photoTitle"></h3>
+                <div class="photo__block">
+                    <div class="photo__block-first">
+                    <img src="/img/photo/photo-1.jpg" alt="" class="photo__block-item">
+                    <img src="/img/photo/photo-2.jpg" alt="" class="photo__block-item">
+                    <img src="/img/photo/photo-3.jpg" alt="" class="photo__block-item">                 
+                    </div>
+                    <div class="photo__block-second">
+                        <img src="/img/photo/photo-4.jpg" alt="" class="photo__block-item">
+                        <img src="/img/photo/photo-5.jpg" alt="" class="photo__block-item">
+                        <img src="/img/photo/photo-6.jpg" alt="" class="photo__block-item">                    
+                    </div>
+                </div>
+                <button class="photo__btn btn" data-key="photoBtn"></button>
+            </div>
+        </section>
+
+        <section class="feedback">
+            <div class="feedback__content content">
+                <div class="feedback__block">
+                    <h3 class="feedback__title" data-key="feedbackTitle"></h3>
+                    <div class="feedback__form"> 
+                        <label for="email">Введите e-mail адрес</label>
+                        <div>
+                            <input id="email" type="email" placeholder="name@domain.com" class="feedback__form-input"/>                    
+                            <button class="feedback__form-btn btn" data-key="feedbackBtn"></button>
+                        </div>
+                        <p class="feedback__form-desc" data-key="feedbackDesc"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="footer__content content">
+                <div class="footer__block">
+                    <h3 class="footer__block-title">Компания «РумТибет»</h3>
+                    <p class="footer__block-desc">Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney.</p>            
+                    <div class="footer__block-contact">
+                        <a href="mailto:mail@htmlacademy.ru">info@domain.com</a>
+                        <a href="tel:+79001111111">+7 (123) 456-78-90</a>
+                    </div>
+                    <div class="footer__block-media">
+                        <a href="">
+                            <img src="/img/footer/tg.svg" alt="">    
+                        </a>
+                        <a href="">
+                            <img src="/img/footer/vk.svg" alt=""> 
+                        </a>
+                        <a href="">
+                            <img src="/img/footer/pinterest.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="/img/footer/skype.svg" alt="">
+                        </a>
+                    
+                    </div>
+                </div>
+                <div class="footer__block">
+                    <h3 class="footer__block-title">Наши услуги</h3>
+                    <div class="footer__link">
+                        <a href="/" class="footer__link-item">Прогулки в горы летом</a>
+                        <a href="/" class="footer__link-item">Зимние походы в горы</a>
+                        <a href="/" class="footer__link-item">Посещение храмов в горах</a>
+                        <a href="/" class="footer__link-item">Экстремальные виды туризма</a>
+                        <a href="/" class="footer__link-item">Походы в джунглях Амазонии</a>
+                        <a href="/" class="footer__link-item">Поездка в Африку</a>
+                    </div>
+
+                </div>
+                <div class="footer__block">
+                    <h3 class="footer__block-title">Важно для путешествий</h3>
+                    <div class="footer__link">
+                        <a href="/" class="footer__link-item">Как собрать в долгий поход?</a>
+                        <a href="/" class="footer__link-item">Жизненно важные предметы для похода</a>
+                        <a href="/" class="footer__link-item">Медицинская страховка, гарантии безопасности</a>
+                        <a href="/" class="footer__link-item">Если вы врач - загляните сюда</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <section class="down">
+            <div class="down__content content">
+                <a href="/">ИП Константинопольский К.К., 2023</a>
+                <a href="/">Политика обработки персональных данных</a>
+            </div>
+        </section>
+        <!-- Модальные окна -->
+
+        <div class="modal">
+            <div class="modal__player">
+                <video src="https://rutube.ru/video/5c0aa133a097a15d2e56f77d5010e09f/" controls></video>
+                <div class="modal__back">
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 </body>
 </html>

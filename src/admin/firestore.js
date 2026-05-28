@@ -5,9 +5,9 @@ import { log } from "firebase/firestore/pipelines";
 import { selectors } from '../modals/selectors.js'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAfiiw0580mq5pEWzC4Zl8pRsrlil4kLkg",
-  authDomain: "admin-panel-8c255.firebaseapp.com",
-  projectId: "admin-panel-8c255",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
 };
 
 const app = initializeApp(firebaseConfig);

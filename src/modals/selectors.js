@@ -20,6 +20,7 @@ export const selectors = {
     adminBlock: document.querySelector('.admin__block'),
     adminText: document.querySelector('.admin__text'),
     adminInput: document.querySelector('.admin__text-input'),
+    adminBtnSave: document.querySelector('.btn-first'),
     // dataKey:
     dataKey: document.querySelectorAll('[data-key]')
 }

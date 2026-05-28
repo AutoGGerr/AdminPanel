@@ -1,6 +1,6 @@
 import { selectors } from '../modals/selectors.js'
 import { initializeApp, setLogLevel } from "firebase/app";
-import { getDoc, doc, getFirestore } from "firebase/firestore";
+import { getDoc, doc, getFirestore, updateDoc } from "firebase/firestore";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { log } from 'firebase/firestore/lite/pipelines';
 
@@ -12,6 +12,7 @@ const firebaseConfig = {
 
 
 const adminBlock = selectors.adminBlock
+const adminBtnSave = selectors.adminBtnSave
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
@@ -39,14 +40,25 @@ const headerData = async() =>{
     adminText.append(adminInput)
     adminBlock.prepend(adminText)
 
-    
-    сontent.forEach((item)=> {
-        const docInput = document.createElement('input')
-        docInput.value += item
-        docInput.className = 'admin__block-text'
-        adminInput.append(docInput);
+
+    let dataArray = Object.entries(data)
+
+    dataArray.forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
         
+        const docInput = document.createElement('input')
+        docInput.value += value
+        docInput.className = 'admin__block-text'
+
+        adminInput.append(docInput);
+
+        adminBtnSave.addEventListener('click', async ()=> {
+            await updateDoc(docRef, {
+                [key]: docInput.value
+            })
+        })
     })
+
 }
 
 // About
@@ -72,12 +84,23 @@ const aboutData = async() =>{
     adminText.append(adminInput)
     adminBlock.prepend(adminText)
 
-    
-    сontent.forEach((item)=> {
+
+    let dataArray = Object.entries(data)
+
+    dataArray.forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+        
         const docInput = document.createElement('input')
-        docInput.value += item
+        docInput.value += value
         docInput.className = 'admin__block-text'
+
         adminInput.append(docInput);
+
+        adminBtnSave.addEventListener('click', async ()=> {
+            await updateDoc(docRef, {
+                [key]: docInput.value
+            })
+        })
     })
 }
 
@@ -106,11 +129,22 @@ const offerData = async() =>{
     adminBlock.prepend(adminText)
 
     
-    сontent.forEach((item)=> {
+    let dataArray = Object.entries(data)
+
+    dataArray.forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+        
         const docInput = document.createElement('input')
-        docInput.value += item
+        docInput.value += value
         docInput.className = 'admin__block-text'
+
         adminInput.append(docInput);
+
+        adminBtnSave.addEventListener('click', async ()=> {
+            await updateDoc(docRef, {
+                [key]: docInput.value
+            })
+        })
     })
 }
 
@@ -138,11 +172,22 @@ const popularData = async() =>{
     adminBlock.prepend(adminText)
 
     
-    сontent.forEach((item)=> {
+    let dataArray = Object.entries(data)
+
+    dataArray.forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+        
         const docInput = document.createElement('input')
-        docInput.value += item
+        docInput.value += value
         docInput.className = 'admin__block-text'
+
         adminInput.append(docInput);
+
+        adminBtnSave.addEventListener('click', async ()=> {
+            await updateDoc(docRef, {
+                [key]: docInput.value
+            })
+        })
     })
 }
 
@@ -170,11 +215,22 @@ const blogData = async() =>{
     adminBlock.prepend(adminText)
 
     
-    сontent.forEach((item)=> {
+    let dataArray = Object.entries(data)
+
+    dataArray.forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+        
         const docInput = document.createElement('input')
-        docInput.value += item
+        docInput.value += value
         docInput.className = 'admin__block-text'
+
         adminInput.append(docInput);
+
+        adminBtnSave.addEventListener('click', async ()=> {
+            await updateDoc(docRef, {
+                [key]: docInput.value
+            })
+        })
     })
 }
 
@@ -202,11 +258,22 @@ const photoData = async() =>{
     adminBlock.prepend(adminText)
 
     
-    сontent.forEach((item)=> {
+    let dataArray = Object.entries(data)
+
+    dataArray.forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+        
         const docInput = document.createElement('input')
-        docInput.value += item
+        docInput.value += value
         docInput.className = 'admin__block-text'
+
         adminInput.append(docInput);
+
+        adminBtnSave.addEventListener('click', async ()=> {
+            await updateDoc(docRef, {
+                [key]: docInput.value
+            })
+        })
     })
 }
 
@@ -235,11 +302,22 @@ const feedbackData = async() =>{
     adminBlock.prepend(adminText)
 
     
-    сontent.forEach((item)=> {
+    let dataArray = Object.entries(data)
+
+    dataArray.forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+        
         const docInput = document.createElement('input')
-        docInput.value += item
+        docInput.value += value
         docInput.className = 'admin__block-text'
+
         adminInput.append(docInput);
+
+        adminBtnSave.addEventListener('click', async ()=> {
+            await updateDoc(docRef, {
+                [key]: docInput.value
+            })
+        })
     })
 }
 
